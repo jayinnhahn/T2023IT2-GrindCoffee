@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "96799620893",
+    "project_id": "it2023-headspace-coffee",
+    "storage_bucket": "it2023-headspace-coffee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96799620893:android:91604c11e05870bd122bf4",
+        "android_client_info": {
+          "package_name": "com.example.androidprefinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "96799620893-samfh64r8iq6f0s2hfn3of5dh4o0e8p0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa2HmlfcjFAdRzsyhWHs2E-IPeINqw6Gk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "96799620893-samfh64r8iq6f0s2hfn3of5dh4o0e8p0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96799620893:android:a92334abe9cfcfed122bf4",
+        "android_client_info": {
+          "package_name": "jay.tan.androidfinalexam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "96799620893-samfh64r8iq6f0s2hfn3of5dh4o0e8p0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa2HmlfcjFAdRzsyhWHs2E-IPeINqw6Gk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "96799620893-samfh64r8iq6f0s2hfn3of5dh4o0e8p0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
