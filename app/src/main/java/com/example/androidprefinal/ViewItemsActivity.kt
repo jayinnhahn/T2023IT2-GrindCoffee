@@ -10,11 +10,11 @@ class ViewItemsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_items)
 
-//        val thisIntent: Intent = intent
-//        val title: String = thisIntent.getStringExtra("name").toString()
-//        val description: String = thisIntent.getStringExtra("description").toString()
+        val thisIntent: Intent = intent
+        val title: String = thisIntent.getStringExtra("name").toString()
+        val description: String = thisIntent.getStringExtra("description").toString()
 //        val imageUrl: String = thisIntent.getStringExtra("photoUrl").toString()
-//        val price: String = thisIntent.getStringExtra("price").toString()
+        val price: String = thisIntent.getStringExtra("price").toString()
 
 
         }

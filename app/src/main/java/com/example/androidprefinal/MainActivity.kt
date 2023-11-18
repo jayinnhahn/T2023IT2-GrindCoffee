@@ -1,7 +1,11 @@
+package com.example.androidprefinal
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.GridLayout
+import android.widget.LinearLayout
+import android.widget.TextView
 import com.example.androidprefinal.R
 import com.example.androidprefinal.ViewItemsActivity
 import com.google.firebase.Firebase
@@ -19,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val menuView = findViewById<GridLayout>(R.id.menuItemView)
 
         val db = Firebase.firestore
         db.collection(itemCollectionName)
@@ -28,17 +33,30 @@ class MainActivity : AppCompatActivity() {
                     val description = document.data["description"].toString()
                     val imageUrl = document.data["photoUrl"].toString()
                     val priceTemp = document.data["price"].toString()
-                    val price = String.format("Php. %.2f", priceTemp.toFloat())
+                    val price = String.format("Php.", priceTemp.toFloat())
                     val title = document.data["name"].toString()
 
+                    val menuItemView = layoutInflater.inflate(R.layout.card_view, null)
+                    // Set data to the UI elements in the inflated card
+//                    val imageView = menuItemView.findViewById<ImageView>(R.id.header_image)
+                    val titleTextView = menuItemView.findViewById<TextView>(R.id.textViewTitle)
+                    val priceTextView = menuItemView.findViewById<TextView>(R.id.textViewPrice)
+
+//                    Glide.with(this).load(imageUrl).placeholder(R.drawable.placeholder_image).into(imageView)
+
+                    titleTextView.text = title
+                    priceTextView.text = price
 
                     // Pass the data to the second activity
-                    val intent = Intent(this, ViewItemsActivity::class.java)
-                    intent.putExtra("title", title)
-                    intent.putExtra("description", description)
-                    intent.putExtra("imageUrl", imageUrl)
-                    startActivity(intent)
+//                    val intent = Intent(this, ViewItemsActivity::class.java)
+//                    intent.putExtra("title", title)
+//                    intent.putExtra("description", description)
+//                    intent.putExtra("imageUrl", imageUrl)
+//                    startActivity(intent)
+
+                    menuView.addView(menuItemView)
                 }
+
             }
             .addOnFailureListener { exception ->
                 Log.d("TAG", "get failed with ", exception)
