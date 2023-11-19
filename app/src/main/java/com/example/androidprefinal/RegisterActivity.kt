@@ -1,5 +1,7 @@
 package com.example.androidprefinal
 
+import android.annotation.SuppressLint
+import android.content.ContentValues
 import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -13,50 +15,50 @@ import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 
-class LoginActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_register)
         // [START initialize_auth]
         // Initialize Firebase Auth
         auth = Firebase.auth
         // [END initialize_auth]
 
-        val registerTextView = findViewById<TextView>(R.id.registerTextView)
-        registerTextView.setOnClickListener{
-            val intent = Intent(this, RegisterActivity::class.java)
-           startActivity(intent)
-           finish()
+        val login = findViewById<TextView>(R.id.loginTextView)
+        login.setOnClickListener{
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
-
+        val displayNameTextFieldValue = findViewById<EditText>(R.id.displayNameEditText)
         val emailTextFieldValue = findViewById<EditText>(R.id.emailEditText)
         val passwordTextFieldValue = findViewById<EditText>(R.id.passwordEditText)
-        val loginButton = findViewById<Button>(R.id.loginButton)
-        loginButton.setOnClickListener{
+        val registerButton = findViewById<Button>(R.id.registerButton)
+        registerButton.setOnClickListener{
+            val displayName = displayNameTextFieldValue.text.toString()
             val email = emailTextFieldValue.text.toString()
             val password = passwordTextFieldValue.text.toString()
-            Log.d("email", email)
-            Log.d("pass", password)
-            auth.signInWithEmailAndPassword(email, password)
+            auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
-                        Log.d(TAG, "signInWithEmail:success")
+                        Log.d(TAG, "createUserWithEmail:success")
                         val user = auth.currentUser
                         if (user != null) {
                             Toast.makeText(
                                 baseContext,
-                                "Logged in as ${user.email}.",
+                                "Successfully Registered. ${user.email}",
                                 Toast.LENGTH_SHORT,
                             ).show()
                         }
+
                     } else {
                         // If sign in fails, display a message to the user.
-                        Log.w(TAG, "signInWithEmail:failure", task.exception)
+                        Log.w(TAG, "createUserWithEmail:failure", task.exception)
                         Toast.makeText(
                             baseContext,
-                            "Authentication failed.",
+                            "Error: Registration failed!",
                             Toast.LENGTH_SHORT,
                         ).show()
 
@@ -68,7 +70,4 @@ class LoginActivity : AppCompatActivity() {
             finish()*/
         }
     }
-
-
-
 }
