@@ -4,6 +4,125 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bgBrown"
     tools:context=".ViewItemsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            app:cardCornerRadius="40dp"
+            android:layout_gravity="center"
+            >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/lightBrown">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/coffee"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/itemName"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_gravity="bottom"
+                    android:alpha="0.6"
+                    android:background="@color/darkBrown"
+                    android:fontFamily="@font/social_gothic_demibold"
+                    android:gravity="center"
+                    android:text="Cappucino"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    app:cardCornerRadius="8dp" />
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/social_gothic_demibold"
+                android:text="Description"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                app:cardCornerRadius="8dp" />
+            <TextView
+                android:id="@+id/ItemDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/social_gothic_regular"
+                android:text="Description"
+                android:textColor="@color/white"
+                android:textSize="14sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_marginTop="30dp" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/social_gothic_demibold"
+                    android:text="Price"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    app:cardCornerRadius="8dp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/social_gothic_demibold"
+                    android:text="P"
+                    android:textColor="@color/lightBrown"
+                    android:textSize="48sp"/>
+                <TextView
+                    android:id="@+id/itemPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/social_gothic_demibold"
+                    android:text="150"
+                    android:textColor="@color/white"
+                    android:textSize="48sp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <Button
+                android:id="@+id/mainLogoutButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="20dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/social_gothic_demibold"
+                android:textSize="32sp"
+                android:backgroundTint="@color/lightBrown"
+                android:text="Buy Now"
+                android:layout_gravity="bottom"
+                app:cornerRadius="10dp"
+                app:cardElevation="8dp" />
+        </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@
     android:layout_height="150dp"
     android:layout_rowWeight="1"
     android:layout_columnWeight="1"
+    android:layout_margin="8dp"
     android:background="@color/darkBrown"
     android:padding="12dp"
     app:cornerRadius="20dp"
@@ -16,19 +17,16 @@
         android:layout_height="wrap_content"
         android:background="@color/darkBrown"
         android:orientation="vertical"
-        android:padding="4dp"
-        app:cornerRadius="20dp">
+        android:padding="4dp">
 
         <ImageView
-            android:id="@+id/header_image"
+            android:src="@drawable/addbutton"
             android:layout_width="120dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
-            android:src="@drawable/coffee"
-            app:cornerRadius="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/textViewTitle"
@@ -36,18 +34,11 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/social_gothic_demibold"
             android:paddingTop="5dp"
-            android:text="Cappucino"
-            android:textColor="@color/white"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/textViewPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/social_gothic_demibold"
-            android:text="P150"
+            android:textAlignment="center"
+            android:text="Add Button"
+            android:layout_gravity="center"
             android:textColor="@color/lightBrown"
-            android:textSize="12sp" />
+            android:textSize="16sp" />
     </LinearLayout>
 </LinearLayout>
 
