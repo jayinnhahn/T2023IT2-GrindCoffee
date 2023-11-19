@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.GridLayout
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.core.view.setMargins
 import com.example.androidprefinal.R
 import com.example.androidprefinal.ViewItemsActivity
@@ -39,26 +40,28 @@ class MainActivity : AppCompatActivity() {
                     val title = document.data["name"].toString()
                     val description = document.data["description"].toString()
                     val imageUrl = document.data["photoUrl"].toString()
+                    Log.w("jayjay", imageUrl)
                     val priceTemp = document.data["price"].toString()
-                    val price = String.format("Php.", priceTemp.toFloat())
 
                     val menuItemView = layoutInflater.inflate(R.layout.card_view, null)
                     menuItemView.layoutParams = cardLayoutParams
+//                    menuItemView.elevation = resources.getDimensionPixelSize(R.dimen.button_elevation).toFloat()
+
 
                     val titleTextView = menuItemView.findViewById<TextView>(R.id.textViewTitle)
                     val priceTextView = menuItemView.findViewById<TextView>(R.id.textViewPrice)
 
                     titleTextView.text = title
-                    priceTextView.text = price
+                    priceTextView.text = priceTemp
 
                     menuItemView.setOnClickListener {
                         val intent = Intent(this, ViewItemsActivity::class.java)
                         intent.putExtra("title", title)
                         intent.putExtra("description", description)
+                        intent.putExtra("price", priceTemp)
                         intent.putExtra("imageUrl", imageUrl)
                         startActivity(intent)
                     }
-
                     menuView.addView(menuItemView)
                 }
 
@@ -67,6 +70,7 @@ class MainActivity : AppCompatActivity() {
                 buttonLayoutParams.setMargins(marginInPixels, marginInPixels, marginInPixels, marginInPixels)
 
                 val buttonView = layoutInflater.inflate(R.layout.add_button, null)
+//                buttonView.elevation = resources.getDimensionPixelSize(R.dimen.button_elevation).toFloat()
 
                 buttonView.setOnClickListener {
                     // Handle click action for the "Add" button

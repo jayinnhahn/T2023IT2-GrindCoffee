@@ -4,6 +4,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bgBrown"
     tools:context=".AddItemActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="50dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+            <ImageView
+                android:id="@+id/idIVLogo"
+                android:layout_width="250dp"
+                android:layout_height="125dp"
+                android:layout_gravity="center"
+                android:layout_margin="25dp"
+                android:src="@drawable/grindcoffeelogo"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title:"
+                android:textColor="@color/lightBrown"
+                android:textSize="24sp"
+                android:fontFamily="@font/social_gothic_demibold"/>
+            <TextView
+                android:id="@+id/newItemTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Input the price of your new menu item"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/social_gothic_regular"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Image Url:"
+                android:textColor="@color/lightBrown"
+                android:textSize="24sp"
+                android:fontFamily="@font/social_gothic_demibold"/>
+            <TextView
+                android:id="@+id/newItemImageUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Input the price of your new menu item"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/social_gothic_regular"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description:"
+                android:textColor="@color/lightBrown"
+                android:textSize="24sp"
+                android:fontFamily="@font/social_gothic_demibold"/>
+            <TextView
+                android:id="@+id/newItemDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Input the price of your new menu item"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/social_gothic_regular"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Price:"
+                android:textColor="@color/lightBrown"
+                android:textSize="24sp"
+                android:fontFamily="@font/social_gothic_demibold"/>
+            <EditText
+                android:id="@+id/newItemPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Input the price of your new menu item"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/social_gothic_regular"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/mainLogoutButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/social_gothic_demibold"
+            android:textSize="24sp"
+            android:backgroundTint="@color/lightBrown"
+            android:text="AdD iTEM"
+            app:cornerRadius="10dp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
