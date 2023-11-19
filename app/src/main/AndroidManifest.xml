@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AndroidPreFinal"
         tools:targetApi="31">
         <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddItemActivity"
             android:exported="false" />
         <activity
@@ -26,9 +29,12 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".ViewItemsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginScreenActivity"
             android:exported="false" />
     </application>
 
