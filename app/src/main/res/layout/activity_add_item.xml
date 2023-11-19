@@ -35,15 +35,17 @@
                 android:layout_height="wrap_content"
                 android:text="Title:"
                 android:textColor="@color/lightBrown"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:fontFamily="@font/social_gothic_demibold"/>
-            <TextView
+            <EditText
                 android:id="@+id/newItemTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Input the price of your new menu item"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="14sp"
+                android:backgroundTint="@color/lightBrown"
+                android:ems="10"
                 android:fontFamily="@font/social_gothic_regular"/>
         </LinearLayout>
 
@@ -57,40 +59,19 @@
                 android:layout_height="wrap_content"
                 android:text="Image Url:"
                 android:textColor="@color/lightBrown"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:fontFamily="@font/social_gothic_demibold"/>
-            <TextView
+            <EditText
                 android:id="@+id/newItemImageUrl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Input the price of your new menu item"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="14sp"
+                android:backgroundTint="#99582A"
+                android:ems="10"
                 android:fontFamily="@font/social_gothic_regular"/>
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Description:"
-                android:textColor="@color/lightBrown"
-                android:textSize="24sp"
-                android:fontFamily="@font/social_gothic_demibold"/>
-            <TextView
-                android:id="@+id/newItemDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Input the price of your new menu item"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:fontFamily="@font/social_gothic_regular"/>
-        </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -110,8 +91,35 @@
                 android:hint="Input the price of your new menu item"
                 android:textColor="@color/white"
                 android:textSize="18sp"
+                android:backgroundTint="#99582A"
+                android:ems="10"
                 android:fontFamily="@font/social_gothic_regular"/>
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description:"
+                android:textColor="@color/lightBrown"
+                android:textSize="20sp"
+                android:fontFamily="@font/social_gothic_demibold"/>
+            <EditText
+                android:id="@+id/newItemDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Input the price of your new menu item"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:backgroundTint="#99582A"
+                android:ems="10"
+                android:fontFamily="@font/social_gothic_regular"/>
+        </LinearLayout>
+
         <Button
             android:id="@+id/mainLogoutButton"
             android:layout_width="match_parent"

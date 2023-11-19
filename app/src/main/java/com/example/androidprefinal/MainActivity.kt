@@ -70,12 +70,9 @@ class MainActivity : AppCompatActivity() {
                 buttonLayoutParams.setMargins(marginInPixels, marginInPixels, marginInPixels, marginInPixels)
 
                 val buttonView = layoutInflater.inflate(R.layout.add_button, null)
-//                buttonView.elevation = resources.getDimensionPixelSize(R.dimen.button_elevation).toFloat()
-
                 buttonView.setOnClickListener {
-                    // Handle click action for the "Add" button
-                    // Example: Add new item or perform some action
-                    // This can be customized based on your requirements
+                    val intent = Intent(this, AddItemActivity::class.java)
+                    startActivity(intent)
                 }
 
                 buttonView.layoutParams = buttonLayoutParams

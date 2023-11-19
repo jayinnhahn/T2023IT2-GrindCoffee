@@ -20,10 +20,7 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
-        // [START initialize_auth]
-        // Initialize Firebase Auth
         auth = Firebase.auth
-        // [END initialize_auth]
 
         val login = findViewById<TextView>(R.id.loginTextView)
         login.setOnClickListener{
@@ -40,9 +37,9 @@ class RegisterActivity : AppCompatActivity() {
             val email = emailTextFieldValue.text.toString()
             val password = passwordTextFieldValue.text.toString()
             auth.createUserWithEmailAndPassword(email, password)
+
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
                         Log.d(TAG, "createUserWithEmail:success")
                         val user = auth.currentUser
                         if (user != null) {
@@ -54,7 +51,6 @@ class RegisterActivity : AppCompatActivity() {
                         }
 
                     } else {
-                        // If sign in fails, display a message to the user.
                         Log.w(TAG, "createUserWithEmail:failure", task.exception)
                         Toast.makeText(
                             baseContext,
