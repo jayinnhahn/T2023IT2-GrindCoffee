@@ -34,8 +34,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Title:"
-                android:textColor="@color/lightBrown"
-                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textSize="14sp"
                 android:fontFamily="@font/social_gothic_demibold"/>
             <EditText
                 android:id="@+id/newItemTitle"
@@ -58,8 +58,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Image Url:"
-                android:textColor="@color/lightBrown"
-                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textSize="14sp"
                 android:fontFamily="@font/social_gothic_demibold"/>
             <EditText
                 android:id="@+id/newItemImageUrl"
@@ -81,8 +81,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Price:"
-                android:textColor="@color/lightBrown"
-                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:textSize="14sp"
                 android:fontFamily="@font/social_gothic_demibold"/>
             <EditText
                 android:id="@+id/newItemPrice"
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Input the price of your new menu item"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:backgroundTint="#99582A"
                 android:ems="10"
                 android:fontFamily="@font/social_gothic_regular"/>
@@ -105,8 +105,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Description:"
-                android:textColor="@color/lightBrown"
-                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textSize="14sp"
                 android:fontFamily="@font/social_gothic_demibold"/>
             <EditText
                 android:id="@+id/newItemDescription"
@@ -121,11 +121,12 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/mainLogoutButton"
+            android:id="@+id/mainNewItemButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/social_gothic_demibold"
             android:textSize="24sp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="@color/lightBrown"
             android:text="AdD iTEM"
             app:cornerRadius="10dp" />

@@ -5,13 +5,16 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.GridLayout
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.view.setMargins
+import com.bumptech.glide.Glide
 import com.example.androidprefinal.R
 import com.example.androidprefinal.ViewItemsActivity
 import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.firestore
 import kotlinx.coroutines.Dispatchers
@@ -29,6 +32,14 @@ class MainActivity : AppCompatActivity() {
         val menuView = findViewById<GridLayout>(R.id.menuItemView)
 //        val addButton = findViewById<lay>(R.layout.add_button)
         val db = Firebase.firestore
+        val logoutButton = findViewById<Button>(R.id.mainLogoutButton)
+
+        logoutButton.setOnClickListener {
+            Firebase.auth.signOut()
+            val loginActivity = Intent(this, LoginActivity::class.java)
+            startActivity(loginActivity)
+        }
+
         db.collection(itemCollectionName)
             .get()
             .addOnSuccessListener { result ->
@@ -42,15 +53,17 @@ class MainActivity : AppCompatActivity() {
                     val imageUrl = document.data["photoUrl"].toString()
                     val priceTemp = document.data["price"].toString()
                     val menuItemView = layoutInflater.inflate(R.layout.card_view, null)
+
                     menuItemView.layoutParams = cardLayoutParams
 //                    menuItemView.elevation = resources.getDimensionPixelSize(R.dimen.button_elevation).toFloat()
 
-
                     val titleTextView = menuItemView.findViewById<TextView>(R.id.textViewTitle)
                     val priceTextView = menuItemView.findViewById<TextView>(R.id.textViewPrice)
-
+                    val imageUrlView = menuItemView.findViewById<ImageView>(R.id.header_image)
+                    Log.w("Jayjay", imageUrl + "This is the title" + title )
                     titleTextView.text = title
                     priceTextView.text = priceTemp
+                    Glide.with(this).load(imageUrl).into(imageUrlView)
 
                     menuItemView.setOnClickListener {
                         val intent = Intent(this, ViewItemsActivity::class.java)

@@ -43,7 +43,6 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/lightBrown"
             android:ems="10"
-            android:gravity="center"
             android:textColor="@color/white" />
 
         <TextView
@@ -62,7 +61,6 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/lightBrown"
             android:ems="10"
-            android:gravity="center"
             android:textColor="@color/white" />
 
         <TextView
@@ -82,7 +80,6 @@
                 android:backgroundTint="#99582A"
                 android:ems="10"
                 android:foregroundTint="#3090FF"
-                android:gravity="center"
                 android:inputType="textPassword"
                 android:textColor="#FFFFFF" />
 
@@ -109,7 +106,6 @@
                 android:layout_weight="0"
                 android:text="Already HAVE AN ACCOUNT?"
                 android:fontFamily="@font/social_gothic_regular"
-                android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="12sp" />
 

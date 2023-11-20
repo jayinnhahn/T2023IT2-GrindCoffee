@@ -18,10 +18,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        // [START initialize_auth]
-        // Initialize Firebase Auth
         auth = Firebase.auth
-        // [END initialize_auth]
 
         val registerTextView = findViewById<TextView>(R.id.registerTextView)
         registerTextView.setOnClickListener{
