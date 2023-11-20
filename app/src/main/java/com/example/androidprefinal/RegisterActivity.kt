@@ -14,14 +14,19 @@ import android.widget.Toast
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.firestore
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+    private val db = FirebaseFirestore.getInstance()
+    private val itemCollectionName = "user"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
-        auth = Firebase.auth
 
+        // firebase
+        auth = Firebase.auth
         val login = findViewById<TextView>(R.id.loginTextView)
         login.setOnClickListener{
             val intent = Intent(this, LoginActivity::class.java)
@@ -37,7 +42,6 @@ class RegisterActivity : AppCompatActivity() {
             val email = emailTextFieldValue.text.toString()
             val password = passwordTextFieldValue.text.toString()
             auth.createUserWithEmailAndPassword(email, password)
-
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         Log.d(TAG, "createUserWithEmail:success")
@@ -49,6 +53,26 @@ class RegisterActivity : AppCompatActivity() {
                                 Toast.LENGTH_SHORT,
                             ).show()
                         }
+                        val userMap = hashMapOf(
+                            "Display Name" to displayName,
+                            "Email" to email,
+                            "PhotoURL" to ""
+                        )
+// Add a new document with a generated id.
+
+                        db.collection("user")
+                            .add(userMap)
+                            .addOnSuccessListener { documentReference ->
+                                Log.d(TAG, "DocumentSnapshot written with ID: ${documentReference.id}")
+                            }
+                            .addOnFailureListener { e ->
+                                Log.w(TAG, "Error adding document", e)
+                            }
+                        val intent = Intent(this, LoginActivity::class.java)
+                        startActivity(intent)
+                        finish()
+
+
 
                     } else {
                         Log.w(TAG, "createUserWithEmail:failure", task.exception)
