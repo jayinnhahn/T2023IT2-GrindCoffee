@@ -40,9 +40,7 @@ class MainActivity : AppCompatActivity() {
                     val title = document.data["name"].toString()
                     val description = document.data["description"].toString()
                     val imageUrl = document.data["photoUrl"].toString()
-                    Log.w("jayjay", imageUrl)
                     val priceTemp = document.data["price"].toString()
-
                     val menuItemView = layoutInflater.inflate(R.layout.card_view, null)
                     menuItemView.layoutParams = cardLayoutParams
 //                    menuItemView.elevation = resources.getDimensionPixelSize(R.dimen.button_elevation).toFloat()

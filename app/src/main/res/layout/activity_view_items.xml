@@ -27,8 +27,8 @@
 
             <ImageView
                 android:id="@+id/itemImage"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:src="@drawable/coffee"
                 android:layout_gravity="center"
                 android:scaleType="centerCrop" />
@@ -38,7 +38,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_gravity="bottom"
-                    android:alpha="0.6"
+                    android:alpha="0.8"
                     android:background="@color/darkBrown"
                     android:fontFamily="@font/social_gothic_demibold"
                     android:gravity="center"

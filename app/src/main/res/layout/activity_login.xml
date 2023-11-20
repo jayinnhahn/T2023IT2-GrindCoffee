@@ -50,7 +50,6 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/lightBrown"
                 android:ems="10"
-                android:gravity="center"
                 android:textColor="@color/white" />
 
             <TextView
@@ -68,8 +67,6 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/lightBrown"
             android:ems="10"
-            android:foregroundTint="#3090FF"
-            android:gravity="center"
             android:inputType="textPassword"
             android:textColor="#FFFFFF" />
         </LinearLayout>
@@ -83,7 +80,8 @@
             android:backgroundTint="@color/lightBrown"
             android:textSize="32sp"
             android:fontFamily="@font/social_gothic_demibold"
-            android:text="LOGIN" />
+            android:text="LOGIN"
+            app:cornerRadius="10dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
