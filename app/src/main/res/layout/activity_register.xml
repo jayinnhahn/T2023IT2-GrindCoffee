@@ -32,7 +32,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Display Name"
+            android:text="Display Name:"
             android:fontFamily="@font/social_gothic_medium"
             android:textSize="18sp"
             android:textColor="@color/white" />
@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="EMAIL ADDRESS"
+            android:text="Email Address:"
             android:fontFamily="@font/social_gothic_medium"
             android:textSize="18sp"
             android:textColor="@color/white" />
@@ -67,7 +67,7 @@
             android:id="@+id/textView10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PASSWORD"
+            android:text="Password:"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/social_gothic_medium"
             android:textSize="18sp"
@@ -92,7 +92,8 @@
                 android:backgroundTint="@color/lightBrown"
                 android:textSize="20sp"
                 android:fontFamily="@font/social_gothic_demibold"
-                android:text="REGISTER" />
+                android:text="REGISTER"
+                app:cornerRadius="10dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:text="Title:"
                 android:textColor="@color/white"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 android:fontFamily="@font/social_gothic_demibold"/>
             <EditText
                 android:id="@+id/newItemTitle"
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:text="Image Url:"
                 android:textColor="@color/white"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 android:fontFamily="@font/social_gothic_demibold"/>
             <EditText
                 android:id="@+id/newItemImageUrl"
@@ -68,7 +68,7 @@
                 android:hint="Input the link of the image of your new menu item"
                 android:textColor="@color/white"
                 android:textSize="14sp"
-                android:backgroundTint="#99582A"
+                android:backgroundTint="@color/lightBrown"
                 android:ems="10"
                 android:fontFamily="@font/social_gothic_regular"/>
         </LinearLayout>
@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:text="Price:"
                 android:textColor="@color/white"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 android:fontFamily="@font/social_gothic_demibold"/>
             <EditText
                 android:id="@+id/newItemPrice"
@@ -91,7 +91,7 @@
                 android:hint="Input the price of your new menu item"
                 android:textColor="@color/white"
                 android:textSize="14sp"
-                android:backgroundTint="#99582A"
+                android:backgroundTint="@color/lightBrown"
                 android:ems="10"
                 android:fontFamily="@font/social_gothic_regular"/>
         </LinearLayout>
@@ -106,7 +106,7 @@
                 android:layout_height="wrap_content"
                 android:text="Description:"
                 android:textColor="@color/white"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 android:fontFamily="@font/social_gothic_demibold"/>
             <EditText
                 android:id="@+id/newItemDescription"
@@ -115,7 +115,7 @@
                 android:hint="Input a short description of your new menu item"
                 android:textColor="@color/white"
                 android:textSize="14sp"
-                android:backgroundTint="#99582A"
+                android:backgroundTint="@color/lightBrown"
                 android:ems="10"
                 android:fontFamily="@font/social_gothic_regular"/>
         </LinearLayout>

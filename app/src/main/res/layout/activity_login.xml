@@ -39,7 +39,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EMAIL ADDRESS"
+            android:text="Email Address:"
             android:fontFamily="@font/social_gothic_medium"
             android:textSize="18sp"
             android:textColor="@color/white" />
@@ -57,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="PASSWORD"
+            android:text="Password:"
             android:fontFamily="@font/social_gothic_medium"
             android:textSize="18sp"
             android:textColor="@color/white" />
