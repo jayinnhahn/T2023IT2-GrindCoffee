@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="150dp"
-    android:layout_height="150dp"
+    android:layout_height="175dp"
     android:layout_rowWeight="1"
     android:layout_columnWeight="1"
-    android:layout_margin="8dp"
-    android:background="@color/darkBrown"
-    android:padding="12dp"
-    app:cornerRadius="20dp"
-    android:elevation="4dp"
-    app:cardCornerRadius="8dp">
+    android:elevation="16dp"
+    app:cardCornerRadius="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/darkBrown"
         android:orientation="vertical"
-        android:padding="4dp">
+        android:padding="15dp"
+        android:gravity="center">
 
         <ImageView
             android:src="@drawable/addbutton"
@@ -36,11 +34,9 @@
             android:paddingTop="5dp"
             android:textAlignment="center"
             android:text="Add Button"
+            android:layout_marginBottom="10 dp"
             android:layout_gravity="center"
             android:textColor="@color/lightBrown"
             android:textSize="16sp" />
     </LinearLayout>
-</LinearLayout>
-
-
-
+</androidx.cardview.widget.CardView>

@@ -72,8 +72,6 @@ class RegisterActivity : AppCompatActivity() {
                         startActivity(intent)
                         finish()
 
-
-
                     } else {
                         Log.w(TAG, "createUserWithEmail:failure", task.exception)
                         Toast.makeText(

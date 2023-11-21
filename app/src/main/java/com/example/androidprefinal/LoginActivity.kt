@@ -12,9 +12,13 @@ import android.widget.Toast
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+    private val db = FirebaseFirestore.getInstance()
+    private val userCollectionName = "user"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -47,12 +51,33 @@ class LoginActivity : AppCompatActivity() {
                                 "Logged in as ${user.email}.",
                                 Toast.LENGTH_SHORT,
                             ).show()
+
+                            db.collection(userCollectionName)
+                                .document(user.uid)
+                                .get()
+                                .addOnSuccessListener { document ->
+                                    val userPhoto = document["PhotoURL"].toString()
+                                    val emailAddress = user.email
+                                    val intent = Intent(this, MainActivity::class.java)
+                                    intent.putExtra("userPhoto", userPhoto)
+                                    intent.putExtra("emailAddress", emailAddress)
+                                    startActivity(intent)
+                                    finish()
+                                }
+                                .addOnFailureListener { exception ->
+                                    Log.w(TAG, "Error getting user information", exception)
+                                }
                         }
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
-                        finish()
-                    } else {
-                        // If sign in fails, display a message to the user.
+                        else{
+                            Log.w(TAG, "User is not authenticated.")
+                            Toast.makeText(
+                                baseContext,
+                                "User is not authenticated.",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        }
+                    else {
                         Log.w(TAG, "signInWithEmail:failure", task.exception)
                         Toast.makeText(
                             baseContext,
@@ -63,9 +88,6 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
 
-            /*val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-            finish()*/
         }
     }
 

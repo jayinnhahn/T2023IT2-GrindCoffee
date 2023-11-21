@@ -13,8 +13,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.type.Date
 
 class AddItemActivity : AppCompatActivity() {
-    private val menuCollectionName = "items"
-//    @RequiresApi(Build.VERSION_CODES.O)
+    private val menuCollectionName = "item"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_item)
@@ -33,39 +32,41 @@ class AddItemActivity : AppCompatActivity() {
             val price = priceValue.text.toString()
             val photoUrl = imageUrlValue.text.toString()
 
-            if (name != "" && description != "" && price != "" && photoUrl != "") {
-                val priceDouble = String.format("%.2f", price.toDouble()).toDouble()
-                val data = hashMapOf(
-                    "name" to name,
-                    "description" to description,
-                    "price" to priceDouble,
-                    "photoUrl" to photoUrl,
-                    "dateCreated" to FieldValue.serverTimestamp()
-                )
+            if (name.isNotEmpty() && description.isNotEmpty() && price.isNotEmpty() && photoUrl.isNotEmpty()) {
+                val priceInt = price.toDoubleOrNull()?.toInt() ?: 0
+                if (priceInt != null) {
+                    val data = hashMapOf(
+                        "name" to name,
+                        "description" to description,
+                        "price" to priceInt,
+                        "photoUrl" to photoUrl,
+                        "dateCreated" to FieldValue.serverTimestamp()
+                    )
 
-                db.collection(menuCollectionName).document()
-                    .set(data)
-                    .addOnSuccessListener {
-                        Toast.makeText(
-                            baseContext,
-                            "Added Product Successfully",
-                            Toast.LENGTH_SHORT,
-                        ).show()
-                        finish()
-                        val mainActivity = Intent(this, MainActivity::class.java)
-                        startActivity(mainActivity)
-                    }
-                    .addOnFailureListener {
-                        Toast.makeText(
-                            baseContext,
-                            "Addition of Product Failed",
-                            Toast.LENGTH_SHORT,
-                        ).show()
-                    }
+                    db.collection(menuCollectionName).document()
+                        .set(data)
+                        .addOnSuccessListener {
+                            Toast.makeText(
+                                baseContext,
+                                "Added New Item Successfully",
+                                Toast.LENGTH_SHORT,
+                            ).show()
+                            finish()
+                            val mainActivity = Intent(this, MainActivity::class.java)
+                            startActivity(mainActivity)
+                        }
+                        .addOnFailureListener {
+                            Toast.makeText(
+                                baseContext,
+                                "Addition of Product Failed",
+                                Toast.LENGTH_SHORT,
+                            ).show()
+                        }
+                }
             }
         }
-            }
     }
+}
 
 
 
