@@ -34,11 +34,13 @@ class RegisterActivity : AppCompatActivity() {
             finish()
         }
         val displayNameTextFieldValue = findViewById<EditText>(R.id.displayNameEditText)
+        val photoURLTextFieldValue = findViewById<EditText>(R.id.photoURLEditText)
         val emailTextFieldValue = findViewById<EditText>(R.id.emailEditText)
         val passwordTextFieldValue = findViewById<EditText>(R.id.passwordEditText)
         val registerButton = findViewById<Button>(R.id.registerButton)
         registerButton.setOnClickListener{
             val displayName = displayNameTextFieldValue.text.toString()
+            val photoURL = photoURLTextFieldValue.text.toString()
             val email = emailTextFieldValue.text.toString()
             val password = passwordTextFieldValue.text.toString()
             auth.createUserWithEmailAndPassword(email, password)
@@ -56,7 +58,7 @@ class RegisterActivity : AppCompatActivity() {
                         val userMap = hashMapOf(
                             "Display Name" to displayName,
                             "Email" to email,
-                            "PhotoURL" to ""
+                            "PhotoURL" to photoURL
                         )
             // Add a new document with a generated id.
 
