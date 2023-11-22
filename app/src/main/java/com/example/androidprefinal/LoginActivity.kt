@@ -34,60 +34,69 @@ class LoginActivity : AppCompatActivity() {
         val emailTextFieldValue = findViewById<EditText>(R.id.emailEditText)
         val passwordTextFieldValue = findViewById<EditText>(R.id.passwordEditText)
         val loginButton = findViewById<Button>(R.id.loginButton)
-        loginButton.setOnClickListener{
+        loginButton.setOnClickListener {
             val email = emailTextFieldValue.text.toString()
             val password = passwordTextFieldValue.text.toString()
             Log.d("email", email)
             Log.d("pass", password)
-            auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
-                        Log.d(TAG, "signInWithEmail:success")
-                        val user = auth.currentUser
-                        if (user != null) {
+
+            if (email != "" && password != "") {
+                auth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithEmail:success")
+                            val user = auth.currentUser
+                            if (user != null) {
+                                Toast.makeText(
+                                    baseContext,
+                                    "Logged in as ${user.email}.",
+                                    Toast.LENGTH_SHORT,
+                                ).show()
+
+                                db.collection(userCollectionName)
+                                    .document(user.uid)
+                                    .get()
+                                    .addOnSuccessListener { document ->
+                                        val userPhoto = document["PhotoURL"].toString()
+                                        val emailAddress = user.email
+                                        val intent = Intent(this, MainActivity::class.java)
+                                        intent.putExtra("userPhoto", userPhoto)
+                                        intent.putExtra("emailAddress", emailAddress)
+                                        startActivity(intent)
+                                        finish()
+                                    }
+                                    .addOnFailureListener { exception ->
+                                        Log.w(TAG, "Error getting user information", exception)
+                                    }
+                            } else {
+                                Log.w(TAG, "User is not authenticated.")
+                                Toast.makeText(
+                                    baseContext,
+                                    "User is not authenticated.",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        } else {
+                            Log.w(TAG, "signInWithEmail:failure", task.exception)
                             Toast.makeText(
                                 baseContext,
-                                "Logged in as ${user.email}.",
+                                "Authentication failed.",
                                 Toast.LENGTH_SHORT,
                             ).show()
 
-                            db.collection(userCollectionName)
-                                .document(user.uid)
-                                .get()
-                                .addOnSuccessListener { document ->
-                                    val userPhoto = document["PhotoURL"].toString()
-                                    val emailAddress = user.email
-                                    val intent = Intent(this, MainActivity::class.java)
-                                    intent.putExtra("userPhoto", userPhoto)
-                                    intent.putExtra("emailAddress", emailAddress)
-                                    startActivity(intent)
-                                    finish()
-                                }
-                                .addOnFailureListener { exception ->
-                                    Log.w(TAG, "Error getting user information", exception)
-                                }
                         }
-                        else{
-                            Log.w(TAG, "User is not authenticated.")
-                            Toast.makeText(
-                                baseContext,
-                                "User is not authenticated.",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                        }
-                    else {
-                        Log.w(TAG, "signInWithEmail:failure", task.exception)
-                        Toast.makeText(
-                            baseContext,
-                            "Authentication failed.",
-                            Toast.LENGTH_SHORT,
-                        ).show()
-
                     }
-                }
 
+            }
+             else {
+                Log.w(TAG, "Field is missing.")
+                Toast.makeText(
+                    baseContext,
+                    "A field is missing!",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 

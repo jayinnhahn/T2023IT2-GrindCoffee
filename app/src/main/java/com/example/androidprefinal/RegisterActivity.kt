@@ -58,7 +58,7 @@ class RegisterActivity : AppCompatActivity() {
                             "Email" to email,
                             "PhotoURL" to ""
                         )
-// Add a new document with a generated id.
+            // Add a new document with a generated id.
 
                         db.collection("user")
                             .add(userMap)
