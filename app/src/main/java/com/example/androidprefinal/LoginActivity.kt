@@ -37,8 +37,6 @@ class LoginActivity : AppCompatActivity() {
         loginButton.setOnClickListener {
             val email = emailTextFieldValue.text.toString()
             val password = passwordTextFieldValue.text.toString()
-            Log.d("email", email)
-            Log.d("pass", password)
 
             if (email != "" && password != "") {
                 auth.signInWithEmailAndPassword(email, password)
@@ -59,10 +57,9 @@ class LoginActivity : AppCompatActivity() {
                                     .get()
                                     .addOnSuccessListener { document ->
                                         val userPhoto = document["PhotoURL"].toString()
-                                        val emailAddress = user.email
                                         val intent = Intent(this, MainActivity::class.java)
                                         intent.putExtra("userPhoto", userPhoto)
-                                        intent.putExtra("emailAddress", emailAddress)
+                                        Log.d("jayjay123", "Login" + userPhoto)
                                         startActivity(intent)
                                         finish()
                                     }

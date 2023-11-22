@@ -104,7 +104,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/social_gothic_demibold"
-                            android:text="P"
+                            android:text="₱"
                             android:textColor="@color/lightBrown"
                             android:textSize="48sp" />
 

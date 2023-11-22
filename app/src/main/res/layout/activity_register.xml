@@ -42,6 +42,8 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/lightBrown"
             android:ems="10"
+            android:hint="Input the display name of the user"
+            android:minHeight="48dp"
             android:textColor="@color/white" />
 
         <TextView
@@ -79,6 +81,8 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/lightBrown"
             android:ems="10"
+            android:hint="Input the email address of the user"
+            android:minHeight="48dp"
             android:textColor="@color/white" />
 
         <TextView
@@ -93,13 +97,15 @@
 
         <EditText
             android:id="@+id/passwordEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#99582A"
-            android:ems="10"
-            android:foregroundTint="#3090FF"
-            android:inputType="textPassword"
-            android:textColor="#FFFFFF" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#99582A"
+        android:hint="Input the password you want"
+        android:ems="10"
+        android:foregroundTint="#3090FF"
+        android:inputType="textPassword"
+        android:textColor="#FFFFFF" />
+
 
         <Button
             android:id="@+id/registerButton"

@@ -48,6 +48,7 @@
                 android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Input the email address of your account"
                 android:backgroundTint="@color/lightBrown"
                 android:ems="10"
                 android:textColor="@color/white" />
@@ -61,14 +62,17 @@
             android:fontFamily="@font/social_gothic_medium"
             android:textSize="18sp"
             android:textColor="@color/white" />
-        <EditText
-            android:id="@+id/passwordEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/lightBrown"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:textColor="#FFFFFF" />
+
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/lightBrown"
+                android:ems="10"
+                android:hint="Input the password of your account"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
 
         <Button

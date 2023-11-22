@@ -36,10 +36,11 @@ class   MainActivity : AppCompatActivity() {
 
 
 
-        val emailAddressView: String = intent.getStringExtra("emailAddress").toString()
+        val emailAddressView: String = Firebase.auth.currentUser?.email.toString()
         val userPhotoView: String = intent.getStringExtra("userPhoto").toString()
 
         val userIconView = findViewById<ImageView>(R.id.userIcon)
+        Log.d("jayjay123", userPhotoView)
         Glide.with(this)
             .load(userPhotoView)
             .placeholder(R.drawable.usericon)
@@ -74,9 +75,8 @@ class   MainActivity : AppCompatActivity() {
                     val titleTextView = menuItemView.findViewById<TextView>(R.id.textViewTitle)
                     val priceTextView = menuItemView.findViewById<TextView>(R.id.textViewPrice)
                     val imageUrlView = menuItemView.findViewById<ImageView>(R.id.headerImage)
-
                     titleTextView.text = title
-                    priceTextView.text = "P " + priceTemp
+                    priceTextView.text = "₱" + priceTemp
                     Glide.with(this).load(imageUrl).dontAnimate().into(imageUrlView);
 
                     menuItemView.setOnClickListener {
