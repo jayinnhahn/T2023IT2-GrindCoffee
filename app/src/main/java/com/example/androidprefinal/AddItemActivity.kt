@@ -1,6 +1,7 @@
 package com.example.androidprefinal
 
 import android.content.Intent
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -17,6 +18,15 @@ class AddItemActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_item)
+
+        val orientation = resources.configuration.orientation
+        val layoutResId = if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            R.layout.activity_add_item_tablet
+        } else {
+            R.layout.activity_add_item
+        }
+
+        setContentView(layoutResId)
 
         val titleValue = findViewById<EditText>(R.id.newItemTitle)
         val imageUrlValue = findViewById<EditText>(R.id.newItemImageUrl)

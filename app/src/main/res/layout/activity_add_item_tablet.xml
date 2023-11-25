@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgBrown"
+    tools:context=".AddItemActivity"
+    tools:ignore="MissingDefaultResource">
+
+    <GridLayout
+        android:id="@+id/outerGridLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:columnCount="2"
+        android:padding="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:layout_marginRight="20dp"
+            android:layout_columnWeight="1">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/grindcoffeelogo" />
+
+            </FrameLayout>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_columnWeight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/social_gothic_demibold"/>
+
+            <EditText
+                android:id="@+id/newItemTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/lightBrown"
+                android:ems="10"
+                android:fontFamily="@font/social_gothic_regular"
+                android:hint="Input the Title of your new menu item"
+                android:minHeight="32dp"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Image Url:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/social_gothic_demibold"/>
+
+            <EditText
+                android:id="@+id/newItemImageUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/lightBrown"
+                android:ems="10"
+                android:fontFamily="@font/social_gothic_regular"
+                android:hint="Input the link of the image of your new menu item"
+                android:minHeight="32dp"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Price:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/social_gothic_demibold"/>
+
+            <EditText
+                android:id="@+id/newItemPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/lightBrown"
+                android:ems="10"
+                android:fontFamily="@font/social_gothic_regular"
+                android:hint="Input the price of your new menu item"
+                android:minHeight="48dp"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/social_gothic_demibold"/>
+
+            <EditText
+                android:id="@+id/newItemDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/lightBrown"
+                android:ems="10"
+                android:fontFamily="@font/social_gothic_regular"
+                android:hint="Input a short description of your new menu item"
+                android:minHeight="32dp"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/mainNewItemButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/social_gothic_demibold"
+            android:textSize="24sp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/lightBrown"
+            android:text="AdD iTEM"
+            app:cornerRadius="10dp" />
+    </LinearLayout>
+        </ScrollView>
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

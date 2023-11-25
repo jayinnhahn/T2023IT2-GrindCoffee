@@ -2,6 +2,7 @@ package com.example.androidprefinal
 
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -22,6 +23,17 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        val orientation = resources.configuration.orientation
+        val layoutResId = if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            R.layout.activity_login_tablet
+        } else {
+            R.layout.activity_login
+        }
+
+        setContentView(layoutResId)
+
+
         auth = Firebase.auth
 
         val registerTextView = findViewById<TextView>(R.id.registerTextView)
@@ -104,7 +116,4 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
-
-
-
 }
