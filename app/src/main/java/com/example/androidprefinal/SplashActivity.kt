@@ -7,7 +7,6 @@ import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
 
-@Suppress("DEPRECATION")
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,3 +25,4 @@ class SplashActivity : AppCompatActivity() {
         }, 1000)
     }
 }
+

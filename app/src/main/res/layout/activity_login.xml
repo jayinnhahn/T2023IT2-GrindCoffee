@@ -1,119 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bgBrown"
-    tools:context=".LoginActivity">
+    android:background="@color/bgBrown">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="50dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf=" parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="40dp"
-            app:srcCompat="@drawable/grindcoffeelogo" />
+        android:layout_height="match_parent"
+        android:background="@color/bgBrown"
+        tools:context=".LoginActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="50dp"
             android:orientation="vertical"
-            android:layout_margin="10dp"
-            android:gravity="center">
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Email Address:"
-            android:fontFamily="@font/social_gothic_medium"
-            android:textSize="18sp"
-            android:textColor="@color/white" />
-
-            <EditText
-                android:id="@+id/emailEditText"
+            <ImageView
+                android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Input the email address of your account"
-                android:backgroundTint="@color/lightBrown"
-                android:ems="10"
-                android:textColor="@color/white" />
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                app:srcCompat="@drawable/grindcoffeelogo" />
 
-            <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Password:"
-            android:fontFamily="@font/social_gothic_medium"
-            android:textSize="18sp"
-            android:textColor="@color/white" />
-
-            <EditText
-                android:id="@+id/passwordEditText"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email Address:"
+                    android:fontFamily="@font/social_gothic_medium"
+                    android:textSize="18sp"
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:id="@+id/emailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/lightBrown"
+                    android:ems="10"
+                    android:minHeight="48dp"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Password:"
+                    android:fontFamily="@font/social_gothic_medium"
+                    android:textSize="18sp"
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:id="@+id/passwordEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/lightBrown"
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    android:minHeight="48dp"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="15dp"
                 android:backgroundTint="@color/lightBrown"
-                android:ems="10"
-                android:hint="Input the password of your account"
-                android:inputType="textPassword"
-                android:minHeight="48dp"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
+                android:textSize="32sp"
+                android:fontFamily="@font/social_gothic_demibold"
+                android:text="LOGIN"
+                app:cornerRadius="10dp"/>
 
-        <Button
-            android:id="@+id/loginButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="15dp"
-            android:backgroundTint="@color/lightBrown"
-            android:textSize="32sp"
-            android:fontFamily="@font/social_gothic_demibold"
-            android:text="LOGIN"
-            app:cornerRadius="10dp"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="DON'T HAVE AN ACCOUNT?"
-                android:fontFamily="@font/social_gothic_regular"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="DON'T HAVE AN ACCOUNT?"
+                    android:fontFamily="@font/social_gothic_regular"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/registerTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:layout_weight="0"
-                android:fontFamily="@font/social_gothic_medium"
-                android:text="REGISTER NOW"
-                android:textAlignment="center"
-                android:textColor="@color/lightBrown"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/registerTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/social_gothic_medium"
+                    android:text="REGISTER NOW"
+                    android:textAlignment="center"
+                    android:textColor="@color/lightBrown"
+                    android:textSize="12sp" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

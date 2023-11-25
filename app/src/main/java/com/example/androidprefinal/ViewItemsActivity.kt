@@ -1,6 +1,7 @@
 package com.example.androidprefinal
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,15 @@ class ViewItemsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_items)
+
+        val orientation = resources.configuration.orientation
+        val layoutResId = if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            R.layout.activity_view_items_tablet
+        } else {
+            R.layout.activity_view_items
+        }
+
+        setContentView(layoutResId)
 
         val thisIntent: Intent = intent
         val title: String = thisIntent.getStringExtra("title").toString()

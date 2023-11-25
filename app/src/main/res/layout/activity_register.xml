@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/bgBrown"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bgBrown"
@@ -12,7 +19,6 @@
         android:layout_height="0dp"
         android:layout_margin="50dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +56,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/social_gothic_medium"
             android:text="Photo URL"
             android:textColor="@color/white"
@@ -61,6 +68,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/lightBrown"
             android:ems="10"
+            android:minHeight="48dp"
             android:singleLine="true"
             android:soundEffectsEnabled="false"
             android:textColor="@color/white" />
@@ -97,14 +105,15 @@
 
         <EditText
             android:id="@+id/passwordEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#99582A"
-        android:hint="Input the password you want"
-        android:ems="10"
-        android:foregroundTint="#3090FF"
-        android:inputType="textPassword"
-        android:textColor="#FFFFFF" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#99582A"
+            android:ems="10"
+            android:foregroundTint="#3090FF"
+            android:hint="Input the password you want"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:textColor="#FFFFFF" />
 
 
         <Button
@@ -149,3 +158,4 @@
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -34,8 +34,6 @@ class   MainActivity : AppCompatActivity() {
         val db = Firebase.firestore
         val logoutButton = findViewById<Button>(R.id.mainLogoutButton)
 
-
-
         val emailAddressView: String = Firebase.auth.currentUser?.email.toString()
         val userPhotoView: String = intent.getStringExtra("PhotoURL").toString()
         Log.d("BOO", userPhotoView)

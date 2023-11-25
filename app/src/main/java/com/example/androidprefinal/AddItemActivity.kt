@@ -34,7 +34,7 @@ class AddItemActivity : AppCompatActivity() {
 
             if (name.isNotEmpty() && description.isNotEmpty() && price.isNotEmpty() && photoUrl.isNotEmpty()) {
                 val priceInt = price.toDoubleOrNull()?.toInt() ?: 0
-                if (priceInt != null) {
+                if (priceInt != null && priceInt > 0) {
                     val data = hashMapOf(
                         "name" to name,
                         "description" to description,
@@ -63,6 +63,20 @@ class AddItemActivity : AppCompatActivity() {
                             ).show()
                         }
                 }
+                else{
+                    Toast.makeText(
+                        baseContext,
+                        "Please input a reasonable price for the item",
+                        Toast.LENGTH_SHORT,
+                    ).show()
+                }
+            }
+            else{
+                Toast.makeText(
+                    baseContext,
+                    "Field should not be empty",
+                    Toast.LENGTH_SHORT,
+                ).show()
             }
         }
     }
