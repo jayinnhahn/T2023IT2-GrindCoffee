@@ -1,5 +1,6 @@
 package com.example.androidprefinal
 import android.content.Intent
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -29,6 +30,15 @@ class   MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val orientation = resources.configuration.orientation
+        val layoutResId = if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            R.layout.activity_main_tablet
+        } else {
+            R.layout.activity_main
+        }
+
+        setContentView(layoutResId)
         val menuView = findViewById<GridLayout>(R.id.menuItemView)
 //        val addButton = findViewById<lay>(R.layout.add_button)
         val db = Firebase.firestore
