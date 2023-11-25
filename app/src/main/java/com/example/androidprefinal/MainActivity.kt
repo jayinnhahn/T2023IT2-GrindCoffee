@@ -36,7 +36,7 @@ class   MainActivity : AppCompatActivity() {
 
         val emailAddressView: String = Firebase.auth.currentUser?.email.toString()
         val userPhotoView: String = intent.getStringExtra("PhotoURL").toString()
-        Log.d("BOO", userPhotoView)
+        val DisplayNameString: String = intent.getStringExtra("DisplayName").toString()
         val userIconView = findViewById<ImageView>(R.id.userIcon)
         Log.d("jayjay123", userPhotoView)
         Glide.with(this)
@@ -44,6 +44,7 @@ class   MainActivity : AppCompatActivity() {
             .placeholder(R.drawable.usericon)
             .dontAnimate()
             .into(userIconView)
+
         val emailLabel = findViewById<TextView>(R.id.emailAddressLabel)
         emailLabel.text =  emailAddressView
 
@@ -53,6 +54,15 @@ class   MainActivity : AppCompatActivity() {
             val loginActivity = Intent(this, LoginActivity::class.java)
             startActivity(loginActivity)
 
+        }
+
+        userIconView.setOnClickListener {
+            finish()
+            val viewUserActivity = Intent(this, ViewUserActivity::class.java)
+            viewUserActivity.putExtra("imageUrl", userPhotoView)
+            viewUserActivity.putExtra("displayName", DisplayNameString)
+            viewUserActivity.putExtra("emailLabel", emailAddressView)
+            startActivity(viewUserActivity)
         }
 
         db.collection(itemCollectionName)

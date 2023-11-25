@@ -57,11 +57,15 @@ class LoginActivity : AppCompatActivity() {
                                     .get()
                                     .addOnSuccessListener { documents ->
                                         var PhotoURL = ""
+                                        var DisplayName = ""
                                         for (document in documents) {
                                               PhotoURL = document.data["PhotoURL"].toString()
+                                              DisplayName = document.data["Display Name"].toString()
                                         }
                                         val intent = Intent(this, MainActivity::class.java)
                                         intent.putExtra("PhotoURL", PhotoURL)
+                                        intent.putExtra("DisplayName", DisplayName)
+
                                         startActivity(intent)
                                         finish()
 
