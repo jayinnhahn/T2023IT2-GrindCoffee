@@ -52,20 +52,24 @@ class LoginActivity : AppCompatActivity() {
                                     Toast.LENGTH_SHORT,
                                 ).show()
 
-                                db.collection(userCollectionName)
-                                    .document(user.uid)
+                                val email = db.collection(userCollectionName)
+                                    .whereEqualTo("Email", user.email)
                                     .get()
-                                    .addOnSuccessListener { document ->
-                                        val userPhoto = document["PhotoURL"].toString()
+                                    .addOnSuccessListener { documents ->
+                                        var PhotoURL = ""
+                                        for (document in documents) {
+                                              PhotoURL = document.data["PhotoURL"].toString()
+                                        }
                                         val intent = Intent(this, MainActivity::class.java)
-                                        intent.putExtra("userPhoto", userPhoto)
-                                        Log.d("jayjay123", "Login" + userPhoto)
+                                        intent.putExtra("PhotoURL", PhotoURL)
                                         startActivity(intent)
                                         finish()
+
                                     }
                                     .addOnFailureListener { exception ->
                                         Log.w(TAG, "Error getting user information", exception)
                                     }
+
                             } else {
                                 Log.w(TAG, "User is not authenticated.")
                                 Toast.makeText(

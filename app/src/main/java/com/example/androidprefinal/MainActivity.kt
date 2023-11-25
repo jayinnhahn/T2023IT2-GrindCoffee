@@ -37,8 +37,8 @@ class   MainActivity : AppCompatActivity() {
 
 
         val emailAddressView: String = Firebase.auth.currentUser?.email.toString()
-        val userPhotoView: String = intent.getStringExtra("userPhoto").toString()
-
+        val userPhotoView: String = intent.getStringExtra("PhotoURL").toString()
+        Log.d("BOO", userPhotoView)
         val userIconView = findViewById<ImageView>(R.id.userIcon)
         Log.d("jayjay123", userPhotoView)
         Glide.with(this)
