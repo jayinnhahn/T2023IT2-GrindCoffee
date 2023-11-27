@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import com.bumptech.glide.Glide
 
 class ViewUserActivity : AppCompatActivity() {
@@ -32,6 +33,12 @@ class ViewUserActivity : AppCompatActivity() {
         } else {
             Log.d("jhayajy", "One or more values are null")
         }
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                finish()
+            }
+        })
 
     }
 }

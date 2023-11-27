@@ -79,7 +79,6 @@ class LoginActivity : AppCompatActivity() {
                                         intent.putExtra("DisplayName", DisplayName)
 
                                         startActivity(intent)
-                                        finish()
 
                                     }
                                     .addOnFailureListener { exception ->
@@ -104,7 +103,8 @@ class LoginActivity : AppCompatActivity() {
 
                         }
                     }
-
+                emailTextFieldValue.setText("")
+                passwordTextFieldValue.setText("")
             }
              else {
                 Log.w(TAG, "Field is missing.")

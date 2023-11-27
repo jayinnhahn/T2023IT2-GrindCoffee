@@ -3,12 +3,16 @@ import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.widget.Button
 import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.cardview.widget.CardView
 import androidx.core.view.setMargins
 import com.bumptech.glide.Glide
@@ -58,6 +62,29 @@ class   MainActivity : AppCompatActivity() {
         val emailLabel = findViewById<TextView>(R.id.emailAddressLabel)
         emailLabel.text =  emailAddressView
 
+        var doubleBackToExitPressedOnce = false
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true )  {
+            override fun handleOnBackPressed() {
+                if (doubleBackToExitPressedOnce) {
+                    finish()
+                }
+                else {
+                    Toast.makeText(
+                        baseContext,
+                        "Press BACK again to Logout.",
+                        Toast.LENGTH_SHORT,
+                    ).show()
+                }
+                doubleBackToExitPressedOnce = true
+                Handler(Looper.getMainLooper()).postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
+
+
+            }
+
+        })
+
+
+
         logoutButton.setOnClickListener {
             Firebase.auth.signOut()
             finish()
@@ -67,7 +94,6 @@ class   MainActivity : AppCompatActivity() {
         }
 
         userIconView.setOnClickListener {
-            finish()
             val viewUserActivity = Intent(this, ViewUserActivity::class.java)
             viewUserActivity.putExtra("imageUrl", userPhotoView)
             viewUserActivity.putExtra("displayName", DisplayNameString)
