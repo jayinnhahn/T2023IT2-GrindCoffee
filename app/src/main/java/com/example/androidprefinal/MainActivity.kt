@@ -88,9 +88,6 @@ class   MainActivity : AppCompatActivity() {
         logoutButton.setOnClickListener {
             Firebase.auth.signOut()
             finish()
-            val loginActivity = Intent(this, LoginActivity::class.java)
-            startActivity(loginActivity)
-
         }
 
         userIconView.setOnClickListener {

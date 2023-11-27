@@ -39,8 +39,6 @@ class RegisterActivity : AppCompatActivity() {
         auth = Firebase.auth
         val login = findViewById<TextView>(R.id.loginTextView)
         login.setOnClickListener{
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
             finish()
         }
         val displayNameTextFieldValue = findViewById<EditText>(R.id.displayNameEditText)
@@ -80,8 +78,6 @@ class RegisterActivity : AppCompatActivity() {
                             .addOnFailureListener { e ->
                                 Log.w(TAG, "Error adding document", e)
                             }
-                        val intent = Intent(this, LoginActivity::class.java)
-                        startActivity(intent)
                         finish()
 
                     } else {
@@ -95,9 +91,6 @@ class RegisterActivity : AppCompatActivity() {
                     }
                 }
 
-            /*val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-            finish()*/
         }
     }
 }
