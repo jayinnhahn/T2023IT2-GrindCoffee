@@ -9,6 +9,8 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import com.bumptech.glide.Glide
 
 class ViewItemsActivity : AppCompatActivity() {
@@ -50,6 +52,10 @@ class ViewItemsActivity : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(websiteUrl))
             startActivity(intent)
         }
+
+
+
     }
+
 
 }

@@ -40,7 +40,6 @@ class LoginActivity : AppCompatActivity() {
         registerTextView.setOnClickListener{
             val intent = Intent(this, RegisterActivity::class.java)
            startActivity(intent)
-           finish()
         }
 
         val emailTextFieldValue = findViewById<EditText>(R.id.emailEditText)
@@ -79,8 +78,12 @@ class LoginActivity : AppCompatActivity() {
                                         intent.putExtra("DisplayName", DisplayName)
 
                                         startActivity(intent)
-                                        finish()
-
+                                        // removes field values once logged in
+                                        emailTextFieldValue.setText("")
+                                        passwordTextFieldValue.setText("")
+                                        // sets focus to emailTextField
+                                        // so focus in it when logged out
+                                        emailTextFieldValue.requestFocus()
                                     }
                                     .addOnFailureListener { exception ->
                                         Log.w(TAG, "Error getting user information", exception)
